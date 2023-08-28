@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
     try:
-        forma = "{:d}".format(value)
-        print(forma)
+        print("{:d}".format(value))
         return True
     except:
         return False
