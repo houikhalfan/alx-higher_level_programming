@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-not an empty one 
+not an empty one
 """
+
 
 class Square:
     """ square class """
