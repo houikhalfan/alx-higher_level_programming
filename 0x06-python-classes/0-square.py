@@ -3,4 +3,5 @@
 nothing
 """
 class Square:
+    """ nada """
     pass
