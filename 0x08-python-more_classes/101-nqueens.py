@@ -6,16 +6,7 @@ import sys
 
 def init_board(n):
     """Initialize an `n`x`n` sized chessboard with 0's."""
-    board = []
-    [board.append([]) for i in range(n)]
-    [row.append(' ') for i in range(n) for row in board]
-    return board
-
-
-def board_deepcopy(board):
-    """Return a deepcopy of a chessboard."""
-    if isinstance(board, list):
-        return list(map(board_deepcopy, board))
+    board = [[' ' for _ in range(n)] for _ in range(n)]
     return board
 
 
@@ -81,7 +72,7 @@ def recursive_solve(board, row, queens, solutions):
 
     for c in range(len(board)):
         if board[row][c] == " ":
-            tmp_board = board_deepcopy(board)
+            tmp_board = [row.copy() for row in board]
             tmp_board[row][c] = "Q"
             mark_attacked(tmp_board, row, c)
             solutions = recursive_solve(tmp_board, row + 1, queens + 1, solutions)
