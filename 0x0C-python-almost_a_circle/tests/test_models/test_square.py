@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Defines a class TestSquareMethods"""
 
-
 from unittest.mock import patch
 import unittest
 import json

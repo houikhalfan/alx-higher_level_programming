@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Defines a class BaseModelTest"""
 
-
 import json
 import unittest
 import os
