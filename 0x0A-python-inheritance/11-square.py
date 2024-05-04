@@ -6,7 +6,6 @@ Attributes:
     height (int): height of the rectangle.
 """
 
-
 Rectangle = __import__('9-rectangle').Rectangle
 
 

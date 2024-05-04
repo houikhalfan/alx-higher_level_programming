@@ -3,7 +3,6 @@
 MyInt is a rebel. MyInt has == and != operators inverted
 """
 
-
 class MyInt(int):
     """Defines a class MyInt.
 
