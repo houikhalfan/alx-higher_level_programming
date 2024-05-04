@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module that contains the function append_after"""
 
-
 def append_after(file_name="", p_search_tring="", p_new_string=""):
     """function that inserts a line of text to a file, after each line,
     containing a specific string.

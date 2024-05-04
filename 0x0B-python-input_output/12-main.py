@@ -4,7 +4,6 @@
 """
 p_triangle = __import__('12-pascal_triangle').pascal_triangle
 
-
 def print_triangle(triangle):
     """
     Print the triangle
