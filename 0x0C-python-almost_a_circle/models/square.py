@@ -1,66 +1,75 @@
 #!/usr/bin/python3
-"""square class"""
-from .rectangle import Rectangle
+"""
+Square Module
+"""
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """representation of square"""
+    """Sqare Class
+    """
+
     def __init__(self, size, x=0, y=0, id=None):
-        """
-        Initialize a Square object with a
-        given size, x-coordinate, y-coordinate,
-        and an optional id.
-        The size is used to set the width
-        and height of the square.
+        """initialize method
+        args:
+            size: square size
+            x: x position
+            y: y position
+            id: object id
         """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Return a string representation
-        of the Square object."""
-        return "[Square] ({}) {}/{} - {}".\
-            format(self.id, self.x, self.y, self.size)
+        """print method
+        return:
+            formatted list
+        """
+        return ("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
+                                              self.id, self.x,
+                                              self.y, self.width))
 
     @property
     def size(self):
-        """Get the size of the square."""
+        """width getter method
+        return:
+            size of width and height
+        """
         return self.width
 
     @size.setter
     def size(self, value):
-        """
-        Set the size of the square. Validates that
-        the value is an integer and > 0.
-        The size is used to set the width and
-        height of the square.
+        """width and height setter method
+        args:
+            value: size value
+        return:
+            na
         """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """update square method
+        args:
+            args: pointer to arguments
+            kwargs: double pointer to key word arguments
+        return:
+            na
         """
-        Update the attributes of the square.
-        Can be called with positional
-        arguments (id, size, x, y) or keyword arguments.
-        """
-        attrs = ['id', 'size', 'x', 'y']
+
         if args:
-            for i in range(len(args)):
-                setattr(self, attrs[i], args[i])
-        elif kwargs and len(kwargs) != 0:
+            i = 0
+            listme = ['id', 'size', 'x', 'y']
+            for arg in args:
+                setattr(self, listme[i], arg)
+                i += 1
+            return
+        else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """Return a dictionary representation
-        of the square object."""
-        return {
-            'id': self.id,
-            'x': self.x,
-            'size': self.width,
-            'y': self.y
-        }
-
-    def area(self):
-        """cal the area"""
-        return self.width ** 2
+        """returns a dictionary of Square
+        return:
+            dictionary
+        """
+        return {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
