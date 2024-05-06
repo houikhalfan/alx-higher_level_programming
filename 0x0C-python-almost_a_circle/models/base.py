@@ -184,5 +184,4 @@ class Base:
                 turt.forward(sq.height)
                 turt.left(90)
             turt.hideturtle()
-
         turtle.exitonclick()
