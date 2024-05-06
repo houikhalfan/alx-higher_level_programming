@@ -6,6 +6,8 @@ on an NxN grid such that they are all in non-attacking positions
 
 import sys
 
+print("Script is executing...")
+
 def solve_n_queens(n):
     """Solve the N queens problem and return all solutions"""
     solutions = []
@@ -67,5 +69,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     solutions = solve_n_queens(n)
-    for solution in solutions:
-        print(solution)
+    if not solutions:
+        print("No solutions found.")
+    else:
+        for solution in solutions:
+            print(solution)
+            
