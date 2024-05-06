@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-"""Module that contains the function append_after"""
+"""Defines a text file insertion function."""
 
-def append_after(file_name="", p_search_tring="", p_new_string=""):
-    """function that inserts a line of text to a file, after each line,
-    containing a specific string.
 
-    Args:
-        filename (str, optional): name of file. Defaults to "".
-        search_string (str, optional): string to search. Defaults to "".
-        new_string (str, optional): string to append. Defaults to "".
-    """
-    with open(file_name, "r") as f:
-        text = f.readlines()
+def append_after(filename="", search_string="", new_string=""):
+            """Insert text after each line containing a given string in a file.
 
-    with open(file_name, "w") as fo:
-        s = ""
-        for line in text:
-            s += line
-            if p_search_tring in line:
-                s += p_new_string
-        fo.write(s)
+                        Args:
+                                            filename (str): The name of the file.
+                                                                        search_string (str): The string to search for within the file.
+                                                                                                            new_string (str): The string to insert.
+                                                                                                                                                    """
+                                                                                                                                                                                                text = ""
+                                                                                                                                                                                                                                                with open(filename) as r:
+                                                                                                                                                                                                                                                                                                                for line in r:
+                                                                                                                                                                                                                                                                                                                                                                                                text += line
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        if search_string in line:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        text += new_string
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        with open(filename, "w") as w:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        w.write(text)
