@@ -7,6 +7,7 @@ prints the following statistics:
     - Count of read status codes up to that point.
 """
 
+
 def print_stats(size, status_codes):
     """Print accumulated metrics.
 
